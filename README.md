@@ -1,0 +1,9 @@
+# Optimal-Parenthetical-Arrangement
+Problem: 
+A chain of n matrices M1, M2, …, Mn are given to be multiplied. The program finds the order that the matrices should be multiplied in order to minimize multiplications. The algorithm should receive user input of the matrix dimensions, find the optimal order and then print output with the matrix chain equation with optimal parenthesis arrangement. 
+
+Implementation:
+Four functions are used in the algorithm: optimizeMult, printParenthesis, findPopular, and the main function. The main function reads in user input and calls the optimizeMult function.  
+The optimizeMult function finds optimal order for matrix multiplication and parenthesis placement. It first records the maximum number of operations in an array min[][], before finding the cost of multiplication of each. When it finds cost of multiplication is less than amount stored in min[i][j], the cost is then stored into the array. An entry is made in parens[][], which is used to record the optimal split in matrix chain. An entry is also made in record[], which is used to record each entry made in parens[][]. After finishing calculations, it calls findPopular and printParenthesis functions. 
+The findPopular function is to help the printParenthesis function print the correct format of parenthesis arrangement. It does this by checking for the most frequently reoccurring element in the record[] array. This will be the outermost set of parenthesis around the matrix chain, and does not need to be printed. 
+The printParenthesis function is then able to print the optimal matrix multiplication with parenthetic arrangement. It recursively prints parentheses around left side of the optimal arrangement, and then recursively prints parentheses around the right side of the optimal arrangement. This solution is the output the user sees. 
